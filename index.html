@@ -1,271 +1,177 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🐻 南投埔里三天兩夜親子輕鬆遊</title>
-    <!-- 引入 Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 引入 Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <!-- 引入 FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: #FFF8F0;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南投親子三天兩夜｜一起出發吧！</title>
+<style>
+:root{
+  --green:#3f6f5b; --green2:#7ea58f; --cream:#fff9ef; --orange:#e99555;
+  --yellow:#f6cf65; --ink:#26352e; --muted:#718078; --card:#ffffff;
+  --shadow:0 12px 35px rgba(47,66,56,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#f5fbf5 0%,#fffaf1 55%,#f5f8f2 100%);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+button{font:inherit}
+.hero{min-height:560px;padding:28px 7vw 55px;position:relative;overflow:hidden;background:
+ radial-gradient(circle at 80% 15%,rgba(246,207,101,.55),transparent 24%),
+ radial-gradient(circle at 10% 75%,rgba(126,165,143,.22),transparent 25%);}
+.nav{max-width:1180px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:900;letter-spacing:.08em}.pill{background:#fff;border-radius:999px;padding:10px 16px;box-shadow:0 5px 20px #365a4514;font-size:14px}
+.hero-inner{max-width:1180px;margin:72px auto 0;display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center}
+.kicker{color:var(--green);font-weight:800;letter-spacing:.15em}
+h1{font-size:clamp(42px,6vw,78px);line-height:1.05;margin:14px 0 18px;letter-spacing:-.04em}
+.hero p{font-size:19px;line-height:1.8;color:var(--muted);max-width:680px}
+.hero-card{background:rgba(255,255,255,.78);backdrop-filter:blur(12px);border:1px solid #fff;padding:28px;border-radius:28px;box-shadow:var(--shadow);transform:rotate(2deg)}
+.route{height:220px;border-radius:22px;background:linear-gradient(145deg,#e7f3e8,#fff1d4);position:relative;overflow:hidden}
+.route:before{content:"";position:absolute;inset:40px 30px;border:4px dashed var(--green2);border-radius:50% 35% 50% 40%;transform:rotate(-8deg)}
+.pin{position:absolute;font-size:30px}.p1{left:18%;top:30%}.p2{left:48%;top:58%}.p3{right:15%;top:25%}
+.container{max-width:1180px;margin:-40px auto 80px;padding:0 22px;position:relative}
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:#fff;border-radius:20px;padding:18px;box-shadow:var(--shadow);text-align:center}
+.stat b{display:block;font-size:25px;color:var(--green)}.stat span{font-size:13px;color:var(--muted)}
+.section{margin-top:70px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}
+.section h2{font-size:34px;margin:0}.section-title p{color:var(--muted);margin:0}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
+.tab{border:0;background:#e7eee8;color:var(--green);padding:12px 20px;border-radius:999px;font-weight:800;cursor:pointer;transition:.2s}
+.tab.active{background:var(--green);color:white;box-shadow:0 8px 20px #3f6f5b2e}
+.day-head{background:linear-gradient(120deg,var(--green),#608b72);color:#fff;border-radius:26px;padding:25px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.day-head h3{font-size:27px;margin:0 0 5px}.day-head p{margin:0;opacity:.85}.theme{font-size:15px;background:#ffffff1f;padding:10px 14px;border-radius:999px}
+.timeline{position:relative;margin:25px 0 0 16px;padding-left:30px}.timeline:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:#dbe7dc;border-radius:3px}
+.item{position:relative;background:#fff;border-radius:22px;margin:0 0 16px;padding:20px 22px;box-shadow:0 8px 25px rgba(48,68,57,.08);display:grid;grid-template-columns:95px 1fr auto;gap:18px;align-items:center}
+.item:before{content:"";position:absolute;left:-38px;width:15px;height:15px;border-radius:50%;background:var(--orange);border:5px solid #f5fbf5}
+.time{font-size:20px;font-weight:900;color:var(--green)}.type{font-size:12px;color:var(--muted);margin-top:3px}
+.item h4{margin:0 0 5px;font-size:19px}.item p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.icon{font-size:30px}.mapbtn{border:0;background:#edf5ef;color:var(--green);border-radius:12px;padding:9px 12px;cursor:pointer;font-weight:800}
+.options{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.option{background:#fff;border:2px solid transparent;border-radius:24px;padding:24px;box-shadow:var(--shadow);cursor:pointer;transition:.2s}
+.option:hover{transform:translateY(-3px)}.option.selected{border-color:var(--green)}
+.option .emoji{font-size:35px}.option h4{margin:8px 0;font-size:21px}.option p{color:var(--muted);line-height:1.7;font-size:14px}
+.choose{display:inline-block;margin-top:10px;background:var(--green);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px}
+.footer{background:#263c31;color:#eaf3eb;padding:50px 22px;text-align:center}.footer h2{margin:0 0 10px}.footer p{opacity:.7}
+.modal{display:none;position:fixed;inset:0;background:#16221d99;z-index:10;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:26px;padding:28px;max-width:520px;width:100%;box-shadow:0 25px 80px #0004}.close{float:right;border:0;background:#edf2ed;border-radius:50%;width:35px;height:35px;cursor:pointer}
+.progress{height:8px;background:#e5eee6;border-radius:99px;overflow:hidden;margin:18px 0 0}.progress i{display:block;height:100%;background:var(--orange);width:0;transition:.3s}
+@media(max-width:800px){
+ .hero-inner{grid-template-columns:1fr;margin-top:50px}.hero{min-height:auto}.summary{grid-template-columns:repeat(2,1fr)}
+ .item{grid-template-columns:75px 1fr}.item .mapbtn{grid-column:2;justify-self:start}.options{grid-template-columns:1fr}
+ .day-head{align-items:flex-start;flex-direction:column}.hero-card{display:none}
+}
+</style>
 </head>
-<body class="text-gray-800 antialiased pb-12">
+<body>
+<header class="hero">
+  <nav class="nav"><div class="logo">🌿 NANTOU FAMILY TRIP</div><div class="pill">🚗 親子自駕・3天2夜</div></nav>
+  <div class="hero-inner">
+    <div>
+      <div class="kicker">TAKE A BREAK · MAKE A MEMORY</div>
+      <h1>南投親子<br>三天兩夜</h1>
+      <p>城堡、巧克力、農場、動物與美食，一趟為親子家庭設計的輕鬆小旅行。行程已排好時間，第三天還能自由選擇最喜歡的玩法。</p>
+    </div>
+    <div class="hero-card">
+      <div class="route"><span class="pin p1">📍</span><span class="pin p2">📍</span><span class="pin p3">📍</span></div>
+      <div style="display:flex;justify-content:space-between;margin-top:16px"><b>南投・親子小旅行</b><span>3 DAYS</span></div>
+    </div>
+  </div>
+</header>
 
-    <!-- 頂部標題區 (Hero) -->
-    <header class="bg-gradient-to-r from-orange-400 to-amber-500 text-white pt-16 pb-12 px-4 shadow-md rounded-b-[2.5rem]">
-        <div class="max-w-3xl mx-auto text-center">
-            <h1 class="text-3xl md:text-4xl font-black mb-4 tracking-wide"><i class="fa-solid fa-bear"></i> 南投埔里三天兩夜親子輕鬆遊</h1>
-            <p class="text-lg md:text-xl font-medium mb-6 opacity-95">專為 10位大人 & 7位小寶貝(2-6歲) 量身打造</p>
-            <div class="flex flex-wrap justify-center gap-3 text-sm md:text-base font-semibold">
-                <span class="bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm"><i class="fa-solid fa-car-side mr-2"></i>出發地：高雄</span>
-                <span class="bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm"><i class="fa-solid fa-map-location-dot mr-2"></i>目的地：南投埔里/草屯</span>
-                <span class="bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm"><i class="fa-solid fa-house-chimney mr-2"></i>住宿：泰迪熊悠閒館</span>
-            </div>
-        </div>
-    </header>
+<main class="container">
+  <div class="summary">
+    <div class="stat"><b>3</b><span>天旅行</span></div>
+    <div class="stat"><b>2</b><span>晚住宿</span></div>
+    <div class="stat"><b>10+</b><span>親子景點／餐食</span></div>
+    <div class="stat"><b>1</b><span>第三天自由選擇</span></div>
+  </div>
 
-    <!-- 主內容區 -->
-    <main class="max-w-3xl mx-auto px-4 mt-8 space-y-8">
+  <section class="section" id="schedule">
+    <div class="section-title"><div><h2>🗓️ 行程時間軸</h2><p>點選日期，查看當天完整安排</p></div></div>
+    <div class="tabs">
+      <button class="tab active" data-day="1">DAY 1　🏰 城堡巧克力日</button>
+      <button class="tab" data-day="2">DAY 2　🍄 農場美食日</button>
+      <button class="tab" data-day="3">DAY 3　🦙 動物探險日</button>
+    </div>
+    <div id="dayContent"></div>
+  </section>
 
-        <!-- Day 1 卡片 -->
-        <section class="bg-white rounded-3xl shadow-lg border border-orange-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div class="bg-orange-100 px-6 py-4 border-b border-orange-200">
-                <h2 class="text-2xl font-bold text-orange-800"><i class="fa-solid fa-calendar-day mr-2"></i>Day 1：絕美莊園、夢幻童話與熊熊家</h2>
-                <p class="text-sm text-orange-700 mt-1">從高雄出發，安排中途休息站會合，第一頓午餐就用絕美落羽松森林療癒身心！</p>
-            </div>
-            <div class="p-6">
-                <!-- 穩定版時間軸容器 -->
-                <div class="ml-4 border-l-2 border-orange-300 space-y-6">
-                    
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-orange-500 mr-2">08:30 - 10:30</span>🚗 快樂出發</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">國道 3 號風光，高雄往北行駛。讓孩子們在車上稍微補眠。</p>
-                    </div>
+  <section class="section" id="choices">
+    <div class="section-title"><div><h2>⭐ DAY 3 自由選擇</h2><p>九九峰動物樂園之後，挑一個最適合全家的方案</p></div></div>
+    <div class="options">
+      <div class="option selected" data-choice="A"><div class="emoji">🌳</div><h4>A｜自然生態路線</h4><p>九九峰動物樂園 → 午餐 → 名間親子生態園區 → 回程。適合喜歡戶外、讓孩子跑跑跳跳的家庭。</p><span class="choose">目前選擇</span></div>
+      <div class="option" data-choice="B"><div class="emoji">🍡</div><h4>B｜DIY＋伴手禮</h4><p>九九峰動物樂園 → 午餐 → 台灣麻糬主題館 → 買伴手禮 → 回程。節奏輕鬆、不容易累。</p><span class="choose">選擇方案</span></div>
+      <div class="option" data-choice="C"><div class="emoji">🤖</div><h4>C｜機器人科技</h4><p>九九峰動物樂園 → 午餐 → 機器人創藝園區 → 回程。適合喜歡科技、機器人與互動體驗的小朋友。</p><span class="choose">選擇方案</span></div>
+      <div class="option" data-choice="D"><div class="emoji">☕</div><h4>D｜完全放鬆</h4><p>九九峰動物樂園 → 午餐 → 親子友善咖啡／甜點 → 回程。最後一天不趕景點，舒服收尾。</p><span class="choose">選擇方案</span></div>
+    </div>
+  </section>
 
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-orange-500 mr-2">10:30 - 11:15</span>🎯 第一會合點：國道 3 號 南投服務區</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">所有車輛在此集結！讓孩子下車跑跳、上廁所。有著名的「LAMUNGAN」大招牌可以拍大合照。</p>
-                    </div>
+  <section class="section">
+    <div class="section-title"><div><h2>🎒 小旅行提醒</h2><p>讓旅程更順的小細節</p></div></div>
+    <div class="options">
+      <div class="option" style="cursor:default"><div class="emoji">⏰</div><h4>時間以現場狀況為準</h4><p>網站中的抵達時間是目前規劃版本，實際會依交通、停留時間與餐廳狀況彈性調整。</p></div>
+      <div class="option" style="cursor:default"><div class="emoji">🧢</div><h4>親子裝備</h4><p>建議準備水壺、防曬用品、帽子、輕便外套與好走的鞋子；動物及戶外行程尤其適合輕裝。</p></div>
+    </div>
+  </section>
+</main>
 
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-orange-500 mr-2">11:15 - 12:00</span>🛣️️ 前往埔里</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">從南投服務區接國道 6 號，直達埔里。</p>
-                    </div>
+<footer class="footer"><h2>🌿 一起出發，玩一趟孩子記得住的旅行</h2><p>南投親子三天兩夜｜行程規劃互動版</p></footer>
 
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-500"></span>
-                        <div class="bg-orange-50 p-4 rounded-xl border border-orange-100">
-                            <h3 class="text-lg font-bold text-gray-800"><span class="text-orange-500 mr-2">12:00 - 13:30</span>🥢 午餐：水与松森林莊園-望林餐廳</h3>
-                            <p class="text-gray-600 mt-1 text-sm md:text-base">
-                                <strong>【絕美莊園】</strong> 隱身在落羽松林間的秘境餐廳！園區佔地廣闊且好停車，吃飽後可以帶著 7 個小寶貝在安全的莊園步道散步、看風景，大自然環境讓經歷長途車程的大人感到超級放鬆。
-                            </p>
-                        </div>
-                    </div>
+<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
 
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-orange-500 mr-2">13:30 - 14:00</span>🚗 點呼上車、短程移動</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base text-orange-600/80">（包含大人小孩上廁所、綁安全座椅與移動時間）</p>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-orange-500 mr-2">14:00 - 16:00</span>🏰 景點：妮娜巧克力夢想城堡</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">室內冷氣開放！免費換穿公主/王子服裝。有互動式光雕牆，還能看巧克力製作過程。<br><span class="inline-block mt-2 text-xs font-semibold bg-orange-200 text-orange-800 px-2 py-1 rounded">💡 推薦買個義式冰淇淋給小朋友吃！</span></p>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-blue-500 border-2 border-white ring-2 ring-blue-500"></span>
-                        <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                            <h3 class="text-lg font-bold text-blue-800"><span class="text-blue-600 mr-2">16:00 - 17:30</span>🛌 入住：泰迪熊悠閒館 (含交通)</h3>
-                            <p class="text-blue-700 mt-1 text-sm md:text-base">抵達民宿分配房間！民宿有電梯，搬推車跟行李超輕鬆。讓孩子們探索可愛的佈置並稍作休息。</p>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-500"></span>
-                        <div class="bg-orange-50 p-4 rounded-xl border border-orange-100">
-                            <h3 class="text-lg font-bold text-gray-800"><span class="text-orange-500 mr-2">17:30 - 19:30</span>🐸 晚餐：有水居創意餐坊</h3>
-                            <p class="text-gray-600 mt-1 text-sm md:text-base">位於桃米親水公園旁的青蛙主題餐廳！環境童趣可愛，草皮與滿滿的青蛙造景保證讓孩子們超興奮。提供美味合菜，非常適合大團體聚餐放鬆。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Day 2 卡片 -->
-        <section class="bg-white rounded-3xl shadow-lg border border-green-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div class="bg-green-100 px-6 py-4 border-b border-green-200">
-                <h2 class="text-2xl font-bold text-green-800"><i class="fa-solid fa-leaf mr-2"></i>Day 2：採菇體驗、火車牛排與瘋狂放電</h2>
-                <p class="text-sm text-green-700 mt-1">集中在埔里，車程短，中午回民宿睡午覺，完美顧及2-6歲小孩的作息！</p>
-            </div>
-            <div class="p-6">
-                <div class="ml-4 border-l-2 border-green-300 space-y-6">
-                    
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-green-500 border-2 border-white ring-2 ring-green-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-green-600 mr-2">08:30 - 09:30</span>🥐 早餐時光</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">享用民宿早餐，慢慢準備出門。</p>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-green-500 border-2 border-white ring-2 ring-green-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-green-600 mr-2">09:30 - 10:00</span>🚗 集合出發前往農場</h3>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-green-500 border-2 border-white ring-2 ring-green-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-green-600 mr-2">10:00 - 12:00</span>🍄 景點：豐年靈芝菇類生態農場</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">農場在室內溫室，不怕曬不怕雨。提著小籃子體驗自己採香菇的樂趣，非常適合 2-6 歲小孩。</p>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-green-500 border-2 border-white ring-2 ring-green-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-green-600 mr-2">12:00 - 12:15</span>🚗 前往埔里市區</h3>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-green-500 border-2 border-white ring-2 ring-green-500"></span>
-                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
-                            <h3 class="text-lg font-bold text-gray-800"><span class="text-green-600 mr-2">12:15 - 13:45</span>🥩 午餐：Running Steak 朗寧牛排</h3>
-                            <p class="text-gray-600 mt-1 text-sm md:text-base">
-                                <strong>【小孩瘋狂亮點】</strong> 超吸睛「軌道小火車」送餐！孩子們為了看火車保證乖乖坐好，大人也能輕鬆切牛排。吃飽後還能順步到旁邊買知名的 18度C 義式冰淇淋當飯後甜點！
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-blue-500 border-2 border-white ring-2 ring-blue-500"></span>
-                        <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                            <h3 class="text-lg font-bold text-blue-800"><span class="text-blue-600 mr-2">13:45 - 15:30</span>💤 午休：返回 泰迪熊悠閒館</h3>
-                            <p class="text-blue-700 mt-1 text-sm md:text-base">吃飽喝足回民宿讓孩子睡午覺，大人也能泡杯咖啡休息，充飽電下午才不鬧情緒。</p>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-green-500 border-2 border-white ring-2 ring-green-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-green-600 mr-2">15:30 - 16:00</span>🚗 叫醒孩子、準備前往公園</h3>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-green-500 border-2 border-white ring-2 ring-green-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-green-600 mr-2">16:00 - 18:00</span>🛝 景點：福興溫泉區親子共融公園</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">傍晚不熱時來這裡最棒！有超大型的沙坑、滑索、溜滑梯。<br>
-                            <span class="inline-block mt-2 text-xs font-semibold bg-green-200 text-green-800 px-2 py-1 rounded">💡 大人福利：旁邊有免費「溫泉泡腳池」，記得幫小孩多帶一套替換衣物！</span>
-                        </p>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-green-500 border-2 border-white ring-2 ring-green-500"></span>
-                        <div class="bg-green-50 p-4 rounded-xl border border-green-100">
-                            <h3 class="text-lg font-bold text-gray-800"><span class="text-green-600 mr-2">18:00 - 20:00</span>🥢 晚餐：鳥居喫茶食堂 或 金都餐廳</h3>
-                            <p class="text-gray-600 mt-1 text-sm md:text-base">
-                                包含從公園移動的車程與停車時間。<br>
-                                • <strong>拍照選「鳥居」</strong>：日式定食，孩子能在庭院走動。<br>
-                                • <strong>美食選「金都」</strong>：埔里國宴餐廳，適合17人的大圓桌合菜，菜色軟嫩。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Day 3 卡片 -->
-        <section class="bg-white rounded-3xl shadow-lg border border-teal-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
-            <div class="bg-teal-100 px-6 py-4 border-b border-teal-200">
-                <h2 class="text-2xl font-bold text-teal-800"><i class="fa-solid fa-tree mr-2"></i>Day 3：亞洲最大鳥類樂園與歡樂賦歸</h2>
-                <p class="text-sm text-teal-700 mt-1">前往草屯超人氣動物園！順路往南，完美銜接回高雄的路線。</p>
-            </div>
-            <div class="p-6">
-                <div class="ml-4 border-l-2 border-teal-300 space-y-6">
-                    
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-2 border-white ring-2 ring-teal-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-teal-600 mr-2">09:00 - 09:40</span>👋 早餐與退房</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">享用早餐，清點行李，跟可愛的泰迪熊說掰掰。</p>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-2 border-white ring-2 ring-teal-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-teal-600 mr-2">09:40 - 10:20</span>🚗 前往 九九峰動物樂園</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base text-teal-700/80">（從埔里走國道6號往草屯方向，完全是回高雄的順路！）</p>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-2 border-white ring-2 ring-teal-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-teal-600 mr-2">10:20 - 13:30</span>🦕 景點：九九峰動物樂園</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">亞洲最大鳥類主題樂園！可以近距離看珍奇鳥類、餵羊駝、看巨大恐龍。全園區有坡道，推嬰兒車很方便。<br>
-                            <span class="inline-block mt-2 text-xs font-semibold bg-teal-200 text-teal-800 px-2 py-1 rounded">💡 佔地廣大，如果長輩或小孩走累了，強烈建議可付費租借園區的「電動車」代步喔！</span>
-                        </p>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-teal-500 border-2 border-white ring-2 ring-teal-500"></span>
-                        <div class="bg-teal-50 p-4 rounded-xl border border-teal-100">
-                            <h3 class="text-lg font-bold text-gray-800"><span class="text-teal-600 mr-2">13:30 - 14:30</span>🍽️ 午餐：樂園美食街 自由用餐</h3>
-                            <p class="text-gray-600 mt-1 text-sm md:text-base">為了減少 17 人拉車找餐廳與車位的麻煩，建議直接在動物樂園內的美食街用餐，座位多且有冷氣。</p>
-                        </div>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-2 border-white ring-2 ring-teal-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-teal-600 mr-2">14:30 - 15:00</span>🚗 集合前往 半山夢工廠</h3>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-2 border-white ring-2 ring-teal-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-teal-600 mr-2">15:00 - 16:30</span>🌳 景點：半山夢工廠 (南投市)</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">超巨大的室內空間！有壯觀的「生命樹環樹步道」，推車可一路無障礙推到頂樓。全室內冷氣開放，作為回程前的最後放風點再適合不過。</p>
-                    </div>
-
-                    <div class="relative pl-6">
-                        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-2 border-white ring-2 ring-teal-500"></span>
-                        <h3 class="text-lg font-bold text-gray-800"><span class="text-teal-600 mr-2">16:30 - </span>🚗 滿載回憶，返回高雄</h3>
-                        <p class="text-gray-600 mt-1 text-sm md:text-base">動物園加上生命樹的運動量，這個時間上車，保證 7 個孩子都會在車上秒睡！大人也能一路安心開回高雄。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 貼心小提醒 -->
-        <section class="bg-amber-100 rounded-3xl p-6 shadow-md border border-amber-200">
-            <h2 class="text-xl font-bold text-amber-900 mb-4"><i class="fa-solid fa-lightbulb mr-2 text-amber-600"></i>親子旅遊顧問 貼心小提醒</h2>
-            <ul class="space-y-3 text-amber-800 text-sm md:text-base">
-                <li class="flex items-start">
-                    <i class="fa-solid fa-check-circle mt-1 mr-3 text-amber-600"></i>
-                    <span><strong>餐廳預約提醒：</strong> 「水与松森林莊園」、「有水居創意餐坊」與「朗寧牛排」非常熱門！17人用餐務必提前幾週打電話預約，並告知需準備 7 張兒童椅。</span>
-                </li>
-                <li class="flex items-start">
-                    <i class="fa-solid fa-check-circle mt-1 mr-3 text-amber-600"></i>
-                    <span><strong>車隊聯絡：</strong> 建議大人出發前下載「Zenly/冰棒」類定位APP，或保持Line通話互相照應。景點皆已篩選過「附大型停車場」的地方。</span>
-                </li>
-                <li class="flex items-start">
-                    <i class="fa-solid fa-check-circle mt-1 mr-3 text-amber-600"></i>
-                    <span><strong>神隊友分工：</strong> 17人團體極需編組！建議分配：採買組（買門票/點餐）、機動組（帶小孩衝廁所/拿衛生紙），會讓行程更有效率。</span>
-                </li>
-                <li class="flex items-start">
-                    <i class="fa-solid fa-check-circle mt-1 mr-3 text-amber-600"></i>
-                    <span><strong>常備用品：</strong> 雖然買東西方便，仍強烈建議自備：防蚊液(極重要！)、蚊蟲藥膏、耳溫槍、退燒藥、OK繃、大量純水濕紙巾。</span>
-                </li>
-            </ul>
-        </section>
-
-    </main>
-
-    <footer class="text-center text-gray-500 text-sm mt-12">
-        <p>祝 17人大家族 旅途愉快，充滿歡笑！💖</p>
-    </footer>
-
+<script>
+const days = {
+1:[
+ ["09:30","🚗","集合","南投服務區會合","集合／出發"],
+ ["11:30","🍽️","午餐","水與松森林莊園","享用午餐"],
+ ["13:30","🧸","住宿","泰迪熊悠閒館 Check-in","放行李、入住"],
+ ["14:30","☕","休息","民宿休息","補充體力"],
+ ["15:30","🍫","親子體驗","妮娜巧克力夢想城堡","城堡參觀、巧克力體驗"],
+ ["18:00","🍽️","晚餐","有水居創意餐坊","晚餐"],
+ ["19:30","🏨","住宿","返回民宿休息","自由活動"]
+],
+2:[
+ ["08:30","☀️","早餐","起床／早餐","悠閒吃早餐"],
+ ["09:30","🍄","親子體驗","豐年靈芝菇類生態農場","生態參觀／親子體驗"],
+ ["12:00","🥩","午餐","朗寧牛排","享用午餐"],
+ ["14:00","🏨","休息","回民宿休息","午休、自由活動"],
+ ["17:00","🌙","晚餐採買","夜市","自由採買喜歡的食物"],
+ ["19:00","🍢","晚餐","回民宿享用夜市美食","親子共享晚餐"],
+ ["20:30","🛏️","休息","民宿自由時間","放鬆、聊天"]
+],
+3:[
+ ["09:00","🦙","親子景點","九九峰動物樂園","動物互動、餵食、拍照"],
+ ["12:30","🍽️","午餐","午餐","可依當天狀況選擇餐廳"],
+ ["14:00","⭐","自由選擇","第三天方案","從下方 A／B／C／D 選擇"],
+ ["16:30","🚗","返程","準備回家","結束南投三天兩夜小旅行"]
+]};
+const themes={1:"🏰 城堡 × 巧克力",2:"🍄 農場 × 美食 × 夜市",3:"🦙 動物 × 自由探索"};
+function renderDay(day){
+ const data=days[day];
+ document.getElementById("dayContent").innerHTML=`
+ <div class="day-head"><div><h3>DAY ${day}</h3><p>${themes[day]}</p></div><div class="theme">${data.length} 個行程節點</div></div>
+ <div class="timeline">${data.map((x,i)=>`
+ <div class="item">
+   <div><div class="time">${x[0]}</div><div class="type">${x[2]}</div></div>
+   <div><h4>${x[1]} ${x[3]}</h4><p>${x[4]}</p></div>
+   <button class="mapbtn" onclick="showInfo('${x[3]}','${x[0]}','${x[4]}')">查看</button>
+ </div>`).join("")}</div>
+ <div class="progress"><i style="width:${day===1?35:day===2?68:100}%"></i></div>`;
+ document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",+t.dataset.day===day));
+}
+function showInfo(name,time,note){
+ document.getElementById("modalContent").innerHTML=`<div style="font-size:34px">📍</div><h2 style="margin:8px 0">${name}</h2><p style="color:#718078;line-height:1.7"><b>預計時間：</b>${time}<br><b>行程：</b>${note}</p><button class="mapbtn" style="margin-top:10px" onclick="openMaps('${name}')">🧭 開啟地圖導航</button>`;
+ document.getElementById("modal").classList.add("show");
+}
+function openMaps(name){window.open("https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(name),"maps")}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>renderDay(+t.dataset.day)));
+document.querySelectorAll(".option").forEach(o=>o.addEventListener("click",()=>{
+ document.querySelectorAll(".option").forEach(x=>x.classList.remove("selected"));
+ o.classList.add("selected");
+ document.querySelectorAll(".option .choose").forEach(x=>x.textContent="選擇方案");
+ o.querySelector(".choose").textContent="目前選擇";
+}));
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+renderDay(1);
+</script>
 </body>
 </html>
